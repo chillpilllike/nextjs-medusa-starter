@@ -27,7 +27,7 @@ const nextConfig = withStoreConfig({
       },
        {
         protocol: "https",
-        hostname: "https://medusa-minio.ck1vby.easypanel.host",
+        hostname: "medusa-minio.ck1vby.easypanel.host",
       },
     ],
   },
