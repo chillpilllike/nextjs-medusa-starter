@@ -1,31 +1,14 @@
-import { Metadata } from "next"
+import React from 'react';
 
-import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
-import StoreTemplate from "@modules/store/templates"
-
-export const metadata: Metadata = {
-  title: "Store",
-  description: "Explore all of our products.",
-}
-
-type Params = {
-  searchParams: {
-    sortBy?: SortOptions
-    page?: string
-  }
-  params: {
-    countryCode: string
-  }
-}
-
-export default async function StorePage({ searchParams, params }: Params) {
-  const { sortBy, page } = searchParams
-
+const Contact = () => {
   return (
-    <StoreTemplate
-      sortBy={sortBy}
-      page={page}
-      countryCode={params.countryCode}
-    />
-  )
-}
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Contact Us</h1>
+      <p className="text-lg">
+        Email: <a href="mailto:support@xyz.com" className="text-blue-500">support@xyz.com</a>
+      </p>
+    </div>
+  );
+};
+
+export default Contact;
