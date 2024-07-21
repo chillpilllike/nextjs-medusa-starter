@@ -2,9 +2,13 @@ import { Text, clx } from "@medusajs/ui";
 import { getCategoriesList, getCollectionsList } from "@lib/data";
 import LocalizedClientLink from "@modules/common/components/localized-client-link";
 import MedusaCTA from "@modules/layout/components/medusa-cta";
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const CarouselSlider = ({ children }) => (
+interface CarouselSliderProps {
+  children: ReactNode;
+}
+
+const CarouselSlider: React.FC<CarouselSliderProps> = ({ children }) => (
   <div className="carousel block relative" data-inactive="">
     {children}
   </div>
