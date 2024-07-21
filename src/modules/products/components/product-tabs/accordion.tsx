@@ -21,14 +21,18 @@ type AccordionProps =
   | (AccordionPrimitive.AccordionSingleProps &
       React.RefAttributes<HTMLDivElement>)
   | (AccordionPrimitive.AccordionMultipleProps &
-      React.RefAttributes<HTMLDivElement>)
+      React.RefAttributes<HTMLDivElement>) & {
+    defaultValue?: string[]
+  }
 
 const Accordion: React.FC<AccordionProps> & {
   Item: React.FC<AccordionItemProps>
-} = ({ children, ...props }) => {
+} = ({ children, defaultValue, ...props }) => {
   return (
     /* @ts-expect-error */
-    <AccordionPrimitive.Root {...props}>{children}</AccordionPrimitive.Root>
+    <AccordionPrimitive.Root {...props} defaultValue={defaultValue}>
+      {children}
+    </AccordionPrimitive.Root>
   )
 }
 
